@@ -84,6 +84,11 @@ def main():
 	#get the drum wav files
 	global drums
 	drums = glob.glob("./Drums/*.wav")
+
+	#read in the bytes for each wave file.  That way there is no opening and closing just playing
+	for i,d in enumerate(drums):
+		drums[i] = #TODO
+
 	print drums
 	if len(drums) > 0:
 		print "Drums Detected"
