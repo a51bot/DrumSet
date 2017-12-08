@@ -4,6 +4,7 @@ import time
 import sys
 import glob
 import serial
+from StringIO import StringIO
 
 #intro
 #WavPlayer is a py script to play a sound based on a character over a serial port
@@ -11,6 +12,7 @@ import serial
 
 #sources pulled from
 #https://playground.arduino.cc/Interfacing/Python
+#https://stackoverflow.com/questions/8195544/how-to-play-wav-data-right-from-memory
 
 #play sound (nonblocking)
 def play_sound(sound_file):
@@ -85,9 +87,11 @@ def main():
 	global drums
 	drums = glob.glob("./Drums/*.wav")
 
-	#read in the bytes for each wave file.  That way there is no opening and closing just playing
-	for i,d in enumerate(drums):
-		drums[i] = #TODO
+	# #read in the bytes for each wave file.  That way there is no opening and closing just playing
+	# for i,d in enumerate(drums):
+	# 	with open(d, 'rb') as f: 
+	# 		drums[i] = StringIO(f.read())
+	# 		drums[i].seek(0)
 
 	print drums
 	if len(drums) > 0:
