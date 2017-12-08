@@ -74,7 +74,8 @@ def play_sound(sound_file):
 	# stop stream (6)
 	stream.stop_stream()
 	stream.close()
-	wf.close()
+	wf.close() #lets see if the works
+	#wf.close()
 
 	# close PyAudio (7)
 	p.terminate()
@@ -86,13 +87,13 @@ def main():
 	print drums
 	if len(drums) > 0:
 		print "Drums Detected"
-
+	else:
+		os.exit(1)
 	#open the serial port
 	global ser
 	ser = serial.Serial('/dev/cu.usbmodemFD1341', 9600)
 
 	prev = ""
-
 	while True:
 		x = ser.readline()
 		x=x.strip()
