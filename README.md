@@ -27,3 +27,6 @@ BugList
 
 	attempt2.py
 		Not nearly realtime enough.  Looks like the threads might have to be made before hand and waiting for a signal to execute
+
+	5VPad
+		no debounce, and its sorely needed
