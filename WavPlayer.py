@@ -45,30 +45,36 @@ def play_sound(sound_file):
 			x=x.strip()
 			if x != prev:
 
-				print x == "k\n"
-
 				global drums
 
 				if x in "k":
 					print "kick"
 					play_sound(drums[1])
+					break
 				if x == '1':
 					print "tom 1"
 					play_sound(drums[3])
+					break
 				if x == '2':
 					print "tom 2"
 					play_sound(drums[4])
+					break
 				if x == '3':
 					print "tom 3"
 					play_sound(drums[5])
+					break
 				if x == 'c':
 					print "crash"
 					play_sound(drums[0])
+					break
 				if x == 'r':
 					print "ride"
 					play_sound(drums[2])
+					break
 				if x == 's':
 					print "TODO Snare"
+					break
+
 
 				print x
 				prev = x
@@ -107,29 +113,34 @@ def main():
 		x = ser.readline()
 		x=x.strip()
 		if x != prev:
-
-			print x == "k\n"
-
+			
 			if x in "k":
 				print "kick"
 				play_sound(drums[1])
+				break
 			if x == '1':
 				print "tom 1"
 				play_sound(drums[3])
+				break
 			if x == '2':
 				print "tom 2"
 				play_sound(drums[4])
+				break
 			if x == '3':
 				print "tom 3"
 				play_sound(drums[5])
+				break
 			if x == 'c':
 				print "crash"
 				play_sound(drums[0])
+				break
 			if x == 'r':
 				print "ride"
 				play_sound(drums[2])
+				break
 			if x == 's':
 				print "TODO Snare"
+				break
 
 			print x
 			prev = x
