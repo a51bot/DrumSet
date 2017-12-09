@@ -9,10 +9,12 @@ from StringIO import StringIO
 #intro
 #WavPlayer is a py script to play a sound based on a character over a serial port
 
+#it has some bugs but works well "enough"
 
-#sources pulled from
 #https://playground.arduino.cc/Interfacing/Python
 #https://stackoverflow.com/questions/8195544/how-to-play-wav-data-right-from-memory
+#https://people.csail.mit.edu/hubert/pyaudio/docs/#example-callback-mode-audio-i-o
+#https://pymotw.com/2/threading/
 
 #play sound (nonblocking)
 def play_sound(sound_file):
@@ -74,7 +76,9 @@ def play_sound(sound_file):
 				if x == 's':
 					print "TODO Snare"
 					break
-
+				if x == 'h':
+					print "TODO hihat"
+					break
 
 				print x
 				prev = x
@@ -93,17 +97,11 @@ def main():
 	global drums
 	drums = glob.glob("./Drums/*.wav")
 
-	# #read in the bytes for each wave file.  That way there is no opening and closing just playing
-	# for i,d in enumerate(drums):
-	# 	with open(d, 'rb') as f: 
-	# 		drums[i] = StringIO(f.read())
-	# 		drums[i].seek(0)
-
-	print drums
 	if len(drums) > 0:
 		print "Drums Detected"
 	else:
 		os.exit(1)
+
 	#open the serial port
 	global ser
 	ser = serial.Serial('/dev/cu.usbmodemFD1341', 9600)
@@ -141,9 +139,12 @@ def main():
 			if x == 's':
 				print "TODO Snare"
 				break
+			if x == 'h':
+				print "TODO hihat"
+				break
 
 			print x
 			prev = x
 
 if __name__ == "__main__":
-	main()
+	main() #call main

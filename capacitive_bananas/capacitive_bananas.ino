@@ -1,3 +1,11 @@
+/*
+This code is not mine but it has been edited.  So credit goes where credit due
+https://blog.eikeland.se/2015/04/24/banana-piano/
+
+*/
+
+
+
 const int PORTS[8] = { 2, 3, 4, 5, 6, 7, 8, 9 };
 const int THRESHOLDS[8] = { 13, 13, 13, 13, 13, 13, 13, 13 };
 
@@ -60,7 +68,7 @@ uint8_t readCapacitivePin(int pinToMeasure) {
 }
 
 void setup() {
-  Serial.begin(57600);
+  Serial.begin(9600);
 }
 
 void handlePort(int index) {
@@ -68,7 +76,40 @@ void handlePort(int index) {
 
   if (!touched[index] && cycles >= THRESHOLDS[index]) {
     touched[index] = true;
-    Serial.print(index);
+
+    //mapping the characters to pins
+    char c = ' ';
+    switch(index){
+      case 0:
+          c = 'k';
+          break;
+      case 1:
+          c = '1';
+          break;
+      case 2:
+          c = '2';
+          break;
+      case 3:
+          c = '3';
+          break;
+      case 4:
+          c = 'c';
+          break;
+      case 5:
+          c = 'r';
+          break;
+      case 6:
+          c = 's';
+          break;
+      case 7: //isnt need swap out with whatever
+          c = 'k';
+          break;
+
+    }
+
+
+
+    Serial.println(c);
   }
 
   if (touched[index] && cycles < THRESHOLDS[index]) {
