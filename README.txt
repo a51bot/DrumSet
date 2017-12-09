@@ -16,7 +16,7 @@ then run "python WavPlayer.py"
 	follow the directions on this link
 	https://superuser.com/questions/143119/how-to-add-python-to-the-windows-path
 
-and be sure to checkout and make changes to the code :)
+and be sure to look at and do whatever you want to the code :)
 
 
 PS:
@@ -33,3 +33,6 @@ BugList
 
 	5VPad
 		no debounce, and its sorely needed
+
+	Cap_Touch_Library
+		Didnt get a chance to modify the example yet, but it should be easy to do.  If your feeling brave go for it!!!
