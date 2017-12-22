@@ -104,7 +104,7 @@ def main():
 
 	#open the serial port
 	global ser
-	ser = serial.Serial('/dev/cu.usbmodemFD1341', 9600)
+	ser = serial.Serial('/dev/tty.usbmodem1411', 9600)
 
 	prev = ""
 	while True:
